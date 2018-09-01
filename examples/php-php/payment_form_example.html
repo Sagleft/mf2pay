@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Payment test</title>
+	</head>
+	<body>
+		<form method="GET" action="http://mf2pay.in/api/payment"> <!-- не меняйте action -->
+			<input type="hidden" name="method" value="create"/> <!-- не меняйте для создания платежа -->
+			<input type="hidden" name="PaymentID" value="4654773"/> <!-- Произвольная строка, ID платежа, по которому вы будете его идентифицировать на своей стороне -->
+			<input type="hidden" name="SellerID" value="13F9X"/> <!-- Ваш ID продавца, который назначается вам после регистрации в MF2Pay -->
+			<input type="hidden" name="CheckURL" value="http://sagleft.ru/checkPayment.php"/> <!-- адрес скрипта проверки платежа на вашей стороне -->
+			<input type="hidden" name="CheckMethod" value="POST"/> <!-- метод отправки данных с формы на странице платежа к скрипту на вашем сервере -->
+			<input type="hidden" name="Email" value="sagleft@inbox.ru"/> <!-- email покупателя, на данный email поступит сообщение с дальнейшими инструкциями и ссылкой на страницу платежа -->
+			<input type="hidden" name="Seed" value="45a21321593ac1e998332c80349280302755b9bb39d42d7992d16b20870e78aa"/> <!-- Seed - значение, которое вы получаете после генерации платежа, образуется из хеширования PaymentID и private_key, выданного вам после регистрации -->
+			<input type="hidden" name="Amount" value="1"/> <!-- сумма платежа в MFC -->
+			<input type="submit" value="Оплатить"/>
+		</form>
+	</body>
+</html>
